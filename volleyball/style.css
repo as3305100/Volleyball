@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+ max-width: 576px;
+}
+
+.second {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    max-width: 576px;
+    border: 1px solid red;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 50vh;
+}
+body {
+    background-color: #212121;
+    color: aliceblue;
+}
+
+.a {
+    border: 1px solid blue;
+    height: 50vh;
+    max-width: 50%;
+    
+}
+.b {
+    border: 1px solid green;
+    max-width: 50%;
+    height: 50vh;
+}
+
+.teamA {
+    text-align: center;
+}
+.scoreA {
+    text-align: center;
+    color: rgb(152, 249, 5);
+}
+.teamB {
+    text-align: center;
+    color: brown;
+}
+.scoreB {
+    text-align: center;
+    color: crimson;
+}
+.winner { 
+     display: block; 
+     text-align: center;
+     margin-top: 20px;
+     font-size: 25px;
+} 

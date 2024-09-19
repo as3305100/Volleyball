@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="second">
+        <div class="a">
+          <h2 class="teamA">Team A Score</h2>
+          <h2 class="scoreA">0</h2>
+          <button class="addScore">Add Score</button>
+          <button class="removeScore">Remove Score</button>
+        </div>
+        <div class="b">
+          <h2 class="teamB">Team b Score</h2>
+          <h2 class="scoreB">0</h2>
+          <button class="add">Add Score</button>
+          <button class="remove">Remove Score</button>
+        </div>
+      </div>
+      <p class="winner"></p>
+    </div>
+  </body>
+  <script>
+    let teamAScore = document.querySelector(".scoreA");
+    let scoreA = teamAScore.innerHTML;
+
+    let teamBScore = document.querySelector(".scoreB");
+    let scoreB = teamBScore.innerHTML;
+
+    let winner = document.querySelector('.winner')
+
+    
+    document.querySelector(".addScore").addEventListener("click", (e) => {
+      if (scoreA < 30) scoreA++;      
+      teamAScore.innerHTML = scoreA;
+
+      if(scoreA >= 25 && scoreA > scoreB + 1) {
+        winner.innerHTML = "Team A Wins";
+      }
+
+    });
+    document.querySelector(".removeScore").addEventListener("click", (e) => {
+      if (scoreA > 0) scoreA--;
+      teamAScore.innerHTML = scoreA;
+    });
+
+   
+   
+
+    document.querySelector(".add").addEventListener("click", (e) => {
+      if (scoreB < 30) scoreB++;
+      teamBScore.innerHTML = scoreB;
+
+         if(scoreB >= 25 && scoreB > scoreA + 1) {
+              winner.innerHTML = "Team B Wins";
+            }
+    });
+
+    document.querySelector(".remove").addEventListener("click", (e) => {
+      if (scoreB > 0) scoreB--;
+      teamBScore.innerHTML = scoreB;
+    });
+
+  
+    // if (scoreA == 25 && scoreA > scoreB) { 
+        // winner.innerHTML = "Winner is Team "
+    // }
+    console.log(winner.innerHTML)
+  </script>
+</html>
