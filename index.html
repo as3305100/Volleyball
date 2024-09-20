@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>VolleyBall Score Counter</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,13 +13,13 @@
           <h1 class="teamA">Team A Score</h1>
           <h1 class="scoreA">0</h1>
           <button class="addScore">Add Score</button>
-          <button class="removeScore">Remove </button>
+          <button class="removeScore">Remove</button>
         </div>
         <div class="b">
           <h1 class="teamB">Team B Score</h1>
           <h1 class="scoreB">0</h1>
           <button class="add">Add Score</button>
-          <button class="remove">Remove </button>
+          <button class="remove">Remove</button>
         </div>
       </div>
       <p class="winner"></p>
@@ -33,58 +33,88 @@
     let teamBScore = document.querySelector(".scoreB");
     let scoreB = teamBScore.innerHTML;
 
-    let winner = document.querySelector('.winner')
+    let winner = document.querySelector(".winner");
 
-    
+    function declaration(message) {
+      winner.innerHTML = message;
+    }
+
     document.querySelector(".addScore").addEventListener("click", (e) => {
-      if (scoreA < 35) scoreA++;      
+      if (scoreA < 35) scoreA++;
       teamAScore.innerHTML = scoreA;
 
-      if(scoreA >= 25 && scoreA > scoreB + 1) {
-        winner.innerHTML = "Team A Wins";
+      if (scoreA >= 25 && scoreA > scoreB + 1) {
+        declaration("Team A wins");
+      } else if (scoreA >= 24 && scoreA > scoreB) {
+        declaration("Team A Game Point");
+      } else if (scoreA == scoreB) {
+        declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreB >= 24 && scoreB > scoreA) {
+        declaration("Team B Game Point");
+      } else {
+        declaration("");
       }
-       
-      
-
     });
     document.querySelector(".removeScore").addEventListener("click", (e) => {
       if (scoreA > 0) scoreA--;
       teamAScore.innerHTML = scoreA;
 
-      if(!(scoreA >= 25 && scoreA > scoreB + 1)) {
-            winner.innerHTML = " "
-  }
-      
-      
-      
-    });   
-   
+      if (scoreA >= 25 && scoreA > scoreB + 1) {
+        declaration("Team A wins");
+      } else if (scoreA >= 24 && scoreA > scoreB) {
+        declaration("Team A Game Point");
+      } else if (scoreA == scoreB) {
+        declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreB >= 24 && scoreB > scoreA) {
+        declaration("Team B Game Point");
+      } else {
+        declaration("");
+      }         
+     });
 
     document.querySelector(".add").addEventListener("click", (e) => {
       if (scoreB < 35) scoreB++;
       teamBScore.innerHTML = scoreB;
 
-         if(scoreB >= 25 && scoreB > scoreA + 1) {
-              winner.innerHTML = "Team B Wins";
-            }
+      if (scoreB >= 25 && scoreB > scoreA + 1) {
+        declaration("Team B wins");
+      } else if (scoreB >= 24 && scoreB > scoreA) {
+        declaration("Team B Game Point");
+      } else if (scoreA == scoreB) {
+        declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreA >= 24 && scoreA > scoreB) {
+        declaration("Team A Game Point");
+      } else {
+        declaration("");
+      }  
+  
     });
 
     document.querySelector(".remove").addEventListener("click", (e) => {
       if (scoreB > 0) scoreB--;
       teamBScore.innerHTML = scoreB;
-      if(!(scoreB >= 25 && scoreB > scoreA + 1)) {
-            winner.innerHTML = " "
-        }
-    });   
-   
-    const reset = document.querySelector('.reset')
-    reset.addEventListener('click', () => {
-      scoreA = 0
-      scoreB = 0
-      teamAScore.innerHTML = scoreA
-      teamBScore.innerHTML = scoreB
-      winner.innerHTML = ""
-    })  
 
+      if (scoreB >= 25 && scoreB > scoreA + 1) {
+        declaration("Team B wins");
+      } else if (scoreB >= 24 && scoreB > scoreA) {
+        declaration("Team B Game Point");
+      } else if (scoreA == scoreB) {
+        declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreA >= 24 && scoreA > scoreB) {
+        declaration("Team A Game Point");
+      } else {
+        declaration("");
+      }       
+                
+    })
+
+    const reset = document.querySelector(".reset");
+    reset.addEventListener("click", () => {
+      scoreA = 0;
+      scoreB = 0;
+      teamAScore.innerHTML = scoreA;
+      teamBScore.innerHTML = scoreB;     
+      declaration("");
+    });
   </script>
 </html>
