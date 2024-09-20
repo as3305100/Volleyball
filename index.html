@@ -49,6 +49,8 @@
         declaration("Team A Game Point");
       } else if (scoreA == scoreB) {
         declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreB >= 25 && scoreB > scoreA + 1) {
+        declaration("Team B wins");
       } else if (scoreB >= 24 && scoreB > scoreA) {
         declaration("Team B Game Point");
       } else {
@@ -65,12 +67,14 @@
         declaration("Team A Game Point");
       } else if (scoreA == scoreB) {
         declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreB >= 25 && scoreB > scoreA + 1) {
+        declaration("Team B wins");
       } else if (scoreB >= 24 && scoreB > scoreA) {
         declaration("Team B Game Point");
       } else {
         declaration("");
-      }         
-     });
+      }
+    });
 
     document.querySelector(".add").addEventListener("click", (e) => {
       if (scoreB < 35) scoreB++;
@@ -82,12 +86,13 @@
         declaration("Team B Game Point");
       } else if (scoreA == scoreB) {
         declaration(` Score Tie At ${scoreA} `);
-      } else if (scoreA >= 24 && scoreA > scoreB) {
+      } else if (scoreA >= 25 && scoreA > scoreB + 1) {
+        declaration("Team A wins");
+      } else if (scoreA >= 24 && scoreA > scoreB ) {
         declaration("Team A Game Point");
       } else {
         declaration("");
-      }  
-  
+      }
     });
 
     document.querySelector(".remove").addEventListener("click", (e) => {
@@ -100,20 +105,21 @@
         declaration("Team B Game Point");
       } else if (scoreA == scoreB) {
         declaration(` Score Tie At ${scoreA} `);
+      } else if (scoreA >= 25 && scoreA > scoreB + 1) {
+        declaration("Team A wins");
       } else if (scoreA >= 24 && scoreA > scoreB) {
         declaration("Team A Game Point");
       } else {
         declaration("");
-      }       
-                
-    })
+      }
+    });
 
     const reset = document.querySelector(".reset");
     reset.addEventListener("click", () => {
       scoreA = 0;
       scoreB = 0;
       teamAScore.innerHTML = scoreA;
-      teamBScore.innerHTML = scoreB;     
+      teamBScore.innerHTML = scoreB;
       declaration("");
     });
   </script>
