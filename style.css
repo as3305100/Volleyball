@@ -4,15 +4,14 @@
 
 .main {
  max-width: 576px;
+ margin: 0 auto;
 }
 
 .second {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
-    max-width: 576px;
-    border: 1px solid red;
+    justify-content: space-around;    
+    /* border: 1px solid red; */
     max-width: 100%;
     margin: 0 auto;
     height: 50vh;
@@ -23,15 +22,15 @@ body {
 }
 
 .a {
-    border: 1px solid blue;
-    height: 50vh;
+    /* border: 1px solid blue; */
+    height: 60vh;
     max-width: 50%;
     
 }
 .b {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     max-width: 50%;
-    height: 50vh;
+    height: 60vh;
 }
 
 .teamA {
@@ -53,5 +52,62 @@ body {
      display: block; 
      text-align: center;
      margin-top: 20px;
-     font-size: 25px;
+     font-size: 28px;
 } 
+.addScore {
+    display: block;
+    width: 90px;
+    height: 40px;
+    background-color: rgb(86, 208, 86);
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+
+.removeScore {
+    font-size: 2;
+    display: block;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(86, 208, 86);
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+.add {
+    display: block;
+    width: 90px;
+    height: 40px;
+    background-color: rgb(86, 208, 86);
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+
+.remove {
+    
+    display: block;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(86, 208, 86);
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+.reset {
+   
+    display: block;
+    width: 90px;
+    height: 40px;
+    background-color: rgb(86, 208, 86);
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 40px;
+
+
+}

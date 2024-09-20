@@ -10,19 +10,20 @@
     <div class="main">
       <div class="second">
         <div class="a">
-          <h2 class="teamA">Team A Score</h2>
-          <h2 class="scoreA">0</h2>
+          <h1 class="teamA">Team A Score</h1>
+          <h1 class="scoreA">0</h1>
           <button class="addScore">Add Score</button>
           <button class="removeScore">Remove Score</button>
         </div>
         <div class="b">
-          <h2 class="teamB">Team b Score</h2>
-          <h2 class="scoreB">0</h2>
+          <h1 class="teamB">Team B Score</h1>
+          <h1 class="scoreB">0</h1>
           <button class="add">Add Score</button>
           <button class="remove">Remove Score</button>
         </div>
       </div>
       <p class="winner"></p>
+      <button class="reset">Reset</button>
     </div>
   </body>
   <script>
@@ -36,24 +37,31 @@
 
     
     document.querySelector(".addScore").addEventListener("click", (e) => {
-      if (scoreA < 30) scoreA++;      
+      if (scoreA < 35) scoreA++;      
       teamAScore.innerHTML = scoreA;
 
       if(scoreA >= 25 && scoreA > scoreB + 1) {
         winner.innerHTML = "Team A Wins";
       }
+       
+      
 
     });
     document.querySelector(".removeScore").addEventListener("click", (e) => {
       if (scoreA > 0) scoreA--;
       teamAScore.innerHTML = scoreA;
-    });
 
-   
+      if(!(scoreA >= 25 && scoreA > scoreB + 1)) {
+            winner.innerHTML = " "
+  }
+      
+      
+      
+    });   
    
 
     document.querySelector(".add").addEventListener("click", (e) => {
-      if (scoreB < 30) scoreB++;
+      if (scoreB < 35) scoreB++;
       teamBScore.innerHTML = scoreB;
 
          if(scoreB >= 25 && scoreB > scoreA + 1) {
@@ -64,12 +72,19 @@
     document.querySelector(".remove").addEventListener("click", (e) => {
       if (scoreB > 0) scoreB--;
       teamBScore.innerHTML = scoreB;
-    });
+      if(!(scoreB >= 25 && scoreB > scoreA + 1)) {
+            winner.innerHTML = " "
+        }
+    });   
+   
+    const reset = document.querySelector('.reset')
+    reset.addEventListener('click', () => {
+      scoreA = 0
+      scoreB = 0
+      teamAScore.innerHTML = scoreA
+      teamBScore.innerHTML = scoreB
+      winner.innerHTML = ""
+    })  
 
-  
-    // if (scoreA == 25 && scoreA > scoreB) { 
-        // winner.innerHTML = "Winner is Team "
-    // }
-    console.log(winner.innerHTML)
   </script>
 </html>
