@@ -53,6 +53,10 @@
         declaration("Team B wins");
       } else if (scoreB >= 24 && scoreB > scoreA) {
         declaration("Team B Game Point");
+      }else if (scoreA > scoreB) {
+          declaration( `Team A in lead ${scoreA - scoreB} Point`)
+      } else if (scoreB > scoreA) {
+            declaration(`Team B in lead ${scoreB - scoreA} Point`)
       } else {
         declaration("");
       }
@@ -71,7 +75,11 @@
         declaration("Team B wins");
       } else if (scoreB >= 24 && scoreB > scoreA) {
         declaration("Team B Game Point");
-      } else {
+      } else if (scoreA > scoreB) {
+       declaration( `Team A in lead ${scoreA - scoreB} Point`)
+        }  else if (scoreB > scoreA) {
+        declaration(`Team B in lead ${scoreB - scoreA} Point`)
+         } else {
         declaration("");
       }
     });
@@ -90,6 +98,12 @@
         declaration("Team A wins");
       } else if (scoreA >= 24 && scoreA > scoreB ) {
         declaration("Team A Game Point");
+
+      } else if (scoreA > scoreB) {
+      declaration( `Team A in lead ${scoreA - scoreB} Point`)
+      }  else if (scoreB > scoreA) {
+     declaration(`Team B in lead ${scoreB - scoreA} Point`)
+      
       } else {
         declaration("");
       }
@@ -109,7 +123,12 @@
         declaration("Team A wins");
       } else if (scoreA >= 24 && scoreA > scoreB) {
         declaration("Team A Game Point");
-      } else {
+      } else if (scoreA > scoreB) {
+          declaration( `Team A in lead ${scoreA - scoreB} Point`)
+        }  else if (scoreB > scoreA) {
+            declaration(`Team B in lead ${scoreB - scoreA} Point`)
+
+         } else {
         declaration("");
       }
     });
